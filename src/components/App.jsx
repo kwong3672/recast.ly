@@ -8,6 +8,7 @@ class App extends React.Component {
   }
 
 
+
   render () {
     return (
       <div>
@@ -16,7 +17,7 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo} /*appState={this.state}*//>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videoList} /*appState={this.state}*//>
+          <VideoList videos={this.state.videoList} appState={this.state}/>
         </div>
       </div>
     );
