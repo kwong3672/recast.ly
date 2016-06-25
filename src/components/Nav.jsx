@@ -1,6 +1,6 @@
-var Nav = () => (
+var Nav = ({searchChangeHandler}) => (
   <nav className="navbar">
-    <div className="col-md-6 col-md-offset-3">
+    <div className="col-md-6 col-md-offset-3" onChange={e => searchChangeHandler(e)}>
       <Search />
     </div>
   </nav>
