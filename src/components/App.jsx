@@ -2,12 +2,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      videoList: exampleVideoData,
-      currentVideo: exampleVideoData[0]
+      videoList: [],
+      currentVideo: {
+        snippet: {
+          description: '',
+          title: ''},
+        id: {VideoId: ''}
+      }
     };
     this.titleClicked = this.titleClicked.bind(this);
   }
-
+// props.video.snippet.description
   titleClicked (video) {
 
     this.setState({
@@ -28,6 +33,12 @@ class App extends React.Component {
         </div>
       </div>
     );
+  }
+  componentDidMount () {
+    searchYouTube({}, (data) => this.setState({ 
+      videoList: data,
+      // currentVideo: data[0]
+    }));
   }
 }
 // In the ES6 spec, files are "modules" and do not share a top-level scope
