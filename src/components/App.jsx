@@ -5,13 +5,15 @@ class App extends React.Component {
       videoList: exampleVideoData,
       currentVideo: exampleVideoData[0]
     };
+    this.titleClicked = this.titleClicked.bind(this);
   }
 
-  handleClickTitle (videos, video) {
+  titleClicked (video) {
+
     this.setState({
-      videos: videos,
-      video: video
+      currentVideo: video
     });
+
   }
 
   render () {
@@ -22,7 +24,7 @@ class App extends React.Component {
           <VideoPlayer video={this.state.currentVideo} /*appState={this.state}*//>
         </div>
         <div className="col-md-5">
-          <VideoList videos={this.state.videoList} appState={this.state}/>
+          <VideoList videos={this.state.videoList} clickHandler={this.titleClicked}/>
         </div>
       </div>
     );

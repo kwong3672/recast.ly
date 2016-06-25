@@ -1,11 +1,11 @@
 var VideoList = (props) => {
-
+  // console.dir(props);
 
   return (
     <div className="video-list media">
 
       {props.videos.map(video =>
-        <VideoListEntry video = {video} appState = {props.state}/>
+        <VideoListEntry video = {video} clickHandler = {props.clickHandler}/>
       )}
 
     </div>
