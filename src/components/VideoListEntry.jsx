@@ -1,8 +1,7 @@
 var VideoListEntry = props => {
 
   var titleClicked = function () {
-    props.state.currentVideo = this.video;
-    console.log('clicked!');
+    console.log(props.video);
   };
 
   return (
@@ -11,7 +10,7 @@ var VideoListEntry = props => {
           <img className="media-object" src={props.video.snippet.thumbnails.default.url} alt="" />
         </div>
         <div className="media-body">
-          <div className="video-list-entry-title" onClick={() => console.log ( this )}>{props.video.snippet.title}</div>
+          <div className="video-list-entry-title" onClick={titleClicked}>{props.video.snippet.title}</div>
           <div className="video-list-entry-detail">{props.video.snippet.description}</div>
         </div>
       </div>

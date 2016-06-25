@@ -7,7 +7,12 @@ class App extends React.Component {
     };
   }
 
-
+  handleClickTitle (videos, video) {
+    this.setState({
+      videos: videos,
+      video: video
+    });
+  }
 
   render () {
     return (
